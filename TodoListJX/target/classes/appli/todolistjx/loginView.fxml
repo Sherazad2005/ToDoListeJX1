@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="420.0" prefWidth="250.0" spacing="50.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.todolistjx.LoginController">
+  <padding>
+    <Insets bottom="50.0" left="50.0" right="50.0" top="100.0" />
+  </padding>
+
+  <Label fx:id="welcomeText" />
+   <Label text="Bienvenue !">
+      <VBox.margin>
+         <Insets bottom="-20.0" top="-70.0" />
+      </VBox.margin>
+      <font>
+         <Font size="28.0" />
+      </font></Label>
+   <Label text="Votre mail :">
+      <VBox.margin>
+         <Insets bottom="-40.0" />
+      </VBox.margin></Label>
+   <TextField>
+      <VBox.margin>
+         <Insets bottom="-40.0" />
+      </VBox.margin></TextField>
+   <Label text="Votre mots de passe :">
+      <VBox.margin>
+         <Insets bottom="-40.0" />
+      </VBox.margin></Label>
+   <PasswordField>
+      <VBox.margin>
+         <Insets bottom="-30.0" />
+      </VBox.margin></PasswordField>
+  <Button text="Connexion">
+      <VBox.margin>
+         <Insets bottom="-30.0" />
+      </VBox.margin></Button>
+   <Button mnemonicParsing="false" text="Mots de passe oublié">
+      <VBox.margin>
+         <Insets bottom="-30.0" />
+      </VBox.margin>
+   </Button>
+   <Button  onAction="#onInscriptionButtonClick" text="Inscription">
+       <VBox.margin>
+           <Insets bottom="-30.0" />
+       </VBox.margin>
+   </Button>
+</VBox>
