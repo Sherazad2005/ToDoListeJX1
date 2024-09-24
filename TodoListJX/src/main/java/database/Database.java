@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Database {
 
     private String server = "localhost";
-    private String nomDeLaBase = "database";
+    private String nomDeLaBase = "site";
     private String utilisateur = "root";
     private String motDePasse = "";
     public Database() {}
@@ -29,8 +29,10 @@ public class Database {
             return cnx;
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+           System.out.print("Erreur : lors de la tentative de connexion à la base de données");
+           e.printStackTrace();
+           return null;
         }
     }
     }
-}
+

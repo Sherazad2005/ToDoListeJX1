@@ -18,4 +18,5 @@ public class InscriptionController {
 
         sceneController.changeScene("loginView.fxml");
     }
+    public 
 }
