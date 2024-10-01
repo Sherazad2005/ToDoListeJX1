@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="420.0" prefWidth="250.0" spacing="50.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.todolistjx.LoginController">
+<VBox alignment="CENTER" prefHeight="138.0" prefWidth="250.0" spacing="50.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.todolistjx.LoginController">
   <padding>
     <Insets bottom="50.0" left="50.0" right="50.0" top="100.0" />
   </padding>
@@ -43,7 +43,7 @@
          <Insets bottom="-30.0" />
       </VBox.margin>
    </Button>
-   <Button  onAction="#onInscriptionButtonClick" text="Inscription">
+   <Button onAction="#onInscriptionButtonClick" text="Inscription">
        <VBox.margin>
            <Insets bottom="-30.0" />
        </VBox.margin>

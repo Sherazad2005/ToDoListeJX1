@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+
+
 public class InscriptionController {
     private SceneController sceneController;
 
@@ -18,5 +20,5 @@ public class InscriptionController {
 
         sceneController.changeScene("loginView.fxml");
     }
-    public 
+
 }

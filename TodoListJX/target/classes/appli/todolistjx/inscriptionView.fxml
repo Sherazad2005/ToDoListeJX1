@@ -13,7 +13,7 @@
       <Insets bottom="50.0" left="50.0" right="50.0" top="100.0" />
    </padding>
    <children>
-      <Label text="Inscription">
+      <Label text="Inscription ">
          <VBox.margin>
             <Insets bottom="50.0" />
          </VBox.margin>
@@ -21,15 +21,15 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <Label text="Nom" />
+      <Label text="Nom :" />
       <TextField />
-      <Label text="Prenom" />
+      <Label text="Prenom :" />
       <TextField />
-      <Label text="Email" />
+      <Label text="Email :" />
       <TextField />
-      <Label text="Mot de passe" />
+      <Label text="Mot de passe :" />
       <PasswordField />
-      <Label text="Confirmation" />
+      <Label text="Confirmation :" />
       <PasswordField />
       <Button mnemonicParsing="false" text="Inscription">
          <VBox.margin>

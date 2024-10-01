@@ -5,14 +5,14 @@ public class User {
     private String nom;
     private String prenom;
     private String email;
-    private String mdp;
+    private String mot_de_passe;
 
-    public User(int id_user, String nom, String prenom, String email, String mdp) {
+    public User(int id_user, String nom, String prenom, String email, String mot_de_passe) {
         this.id_user = id_user;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
-        this.mdp = mdp;
+        this.mot_de_passe = mot_de_passe;
 
     }
     public int getId_user() {
@@ -39,10 +39,10 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getMdp() {
-        return mdp;
+    public String getMot_de_passe() {
+        return mot_de_passe;
     }
-    public void setMdp(String mdp) {
-        this.mdp = mdp;
+    public void setMot_de_passe(String mot_de_passe) {
+        this.mot_de_passe = mot_de_passe;
     }
 }
