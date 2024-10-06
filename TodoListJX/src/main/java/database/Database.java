@@ -8,8 +8,9 @@ public class Database {
 
     private String server = "localhost";
     private String nomDeLaBase = "site";
-    private String utilisateur = "root";
-    private String motDePasse = "";
+    private static String utilisateur = "root";
+    private static String motDePasse = "";
+    private static String url = "jdbc:mysql://localhost/database?serverTimezone=UTC";
     public Database() {}
     public Database(String nomDeLaBase, String utilisateur, String motDePasse) {
         this.nomDeLaBase = nomDeLaBase;
@@ -17,16 +18,14 @@ public class Database {
         this.motDePasse = motDePasse;
 
     }
-    private String getUrl() {
 
-        return "jdbc:mysql://localhost/database?serverTimezone=UTC";
-    }
-    public Connection getConnection(){
+    public static Connection getConnection(){
         try {
-            Connection cnx = DriverManager.getConnection(this.getUrl(),this.utilisateur,this.motDePasse);
+            try (Connection cnx = DriverManager.getConnection(url, utilisateur, motDePasse)) {
                 System.out.print("Etat de la connection :");
-                System.out.println(cnx.isClosed()?"fermée":"ouverte \r\n");
-            return cnx;
+                System.out.println(cnx.isClosed() ? "fermée" : "ouverte \r\n");
+                return cnx;
+            }
 
         } catch (SQLException e) {
            System.out.print("Erreur : lors de la tentative de connexion à la base de données");

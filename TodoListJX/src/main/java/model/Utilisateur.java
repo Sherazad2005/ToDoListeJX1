@@ -1,13 +1,13 @@
 package model;
 
-public class User {
+public class Utilisateur {
     private int id_user;
     private String nom;
     private String prenom;
     private String email;
     private String mot_de_passe;
 
-    public User(int id_user, String nom, String prenom, String email, String mot_de_passe) {
+    public Utilisateur(int id_user, String nom, String prenom, String email, String mot_de_passe) {
         this.id_user = id_user;
         this.nom = nom;
         this.prenom = prenom;
@@ -15,6 +15,10 @@ public class User {
         this.mot_de_passe = mot_de_passe;
 
     }
+
+    public Utilisateur(String text, String text1, String text2) {
+    }
+
     public int getId_user() {
         return id_user;
     }
@@ -44,5 +48,16 @@ public class User {
     }
     public void setMot_de_passe(String mot_de_passe) {
         this.mot_de_passe = mot_de_passe;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id_user=" + id_user +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", mot_de_passe='" + mot_de_passe + '\'' +
+                '}';
     }
 }

@@ -22,20 +22,22 @@
          </font>
       </Label>
       <Label text="Nom :" />
-      <TextField />
+      <TextField fx:id="txtNom" />
       <Label text="Prenom :" />
       <TextField />
       <Label text="Email :" />
-      <TextField />
+      <TextField fx:id="txtEmail"/>
       <Label text="Mot de passe :" />
-      <PasswordField />
+      <PasswordField fx:id="txtMotDePasse" />
       <Label text="Confirmation :" />
-      <PasswordField />
-      <Button mnemonicParsing="false" text="Inscription">
+      <PasswordField fx:id="txtConfirmationMotDePasse"/>
+      <Button  mnemonicParsing="false" text="Inscription">
          <VBox.margin>
             <Insets bottom="20.0" top="20.0" />
          </VBox.margin>
       </Button>
-      <Button mnemonicParsing="false" text="Retour" />
+      <Button text="S'inscrire" fx:id="btnInscription" />
+
+      <Label fx:id="labelErreur" textFill="RED"/>
    </children>
 </VBox>

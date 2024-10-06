@@ -1,5 +1,6 @@
 package appli.todolistjx;
 
+import database.Database;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -22,4 +23,5 @@ public class LoginController {
 
         sceneController.changeScene("inscriptionView.fxml");
     }
+
 }

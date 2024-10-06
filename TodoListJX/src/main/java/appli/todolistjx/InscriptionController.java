@@ -1,24 +1,80 @@
 package appli.todolistjx;
 
 import javafx.fxml.FXML;
-import javafx.stage.Stage;
-import java.io.IOException;
-
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import repository.UtilisateurRepository;
+import model.Utilisateur;
 
 
 public class InscriptionController {
-    private SceneController sceneController;
 
+    @FXML
+    private TextField txtNom;
 
-    public void setSceneController(Stage stage) {
-        this.sceneController = new SceneController(stage);
-    }
+    @FXML
+    private TextField txtEmail;
+
+    @FXML
+    private PasswordField txtMotDePasse;
+
+    @FXML
+    private PasswordField txtConfirmationMotDePasse;
+
+    @FXML
+    private Button btnInscription;
+
+    @FXML
+    private Label labelErreur;
+
+    private UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
 
 
     @FXML
-    protected void onRetourButtonClick() throws IOException {
+    public void handleInscription() {
 
-        sceneController.changeScene("loginView.fxml");
+        if (areFieldsFilled()) {
+            if (passwordsMatch()) {
+                Utilisateur utilisateur = new Utilisateur(txtNom.getText(), txtEmail.getText(), txtMotDePasse.getText());
+
+                boolean success = utilisateurRepository.inscription(utilisateur);
+
+                if (success) {
+
+                    labelErreur.setText("Utilisateur bien ajouté !");
+                    clearFields();
+                } else {
+                    labelErreur.setText("Erreur lors de l'ajout. Veuillez réessayer.");
+                }
+            } else {
+                labelErreur.setText("Erreur, les mots de passe ne correspondent pas !");
+            }
+        } else {
+            labelErreur.setText("Veuillez remplir tous les champs.");
+        }
+    }
+
+
+    private boolean areFieldsFilled() {
+        return !txtNom.getText().isEmpty() &&
+                !txtEmail.getText().isEmpty() &&
+                !txtMotDePasse.getText().isEmpty() &&
+                !txtConfirmationMotDePasse.getText().isEmpty();
+    }
+
+    private boolean passwordsMatch() {
+        return txtMotDePasse.getText().equals(txtConfirmationMotDePasse.getText());
+    }
+
+    private void clearFields() {
+        txtNom.clear();
+        txtEmail.clear();
+        txtMotDePasse.clear();
+        txtConfirmationMotDePasse.clear();
     }
 
 }
+
+
